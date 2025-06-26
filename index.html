@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Online Resume Builder</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/847/847969.png" type="image/png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+  <header class="top-header">
+    <h1>Online Resume Builder</h1>
+    <select id="templateSelect" onchange="updateResume()">
+      <option value="classic">Classic</option>
+      <option value="modern">Modern</option>
+      <option value="minimal">Minimal</option>
+    </select>
+    <button onclick="toggleTheme()">Toggle Theme</button>
+    <button onclick="downloadPDF()">Download PDF</button>
+  </header>
+
+  <main class="layout">
+    <div class="container">
+      <form id="resumeForm" oninput="updateResume()">
+        <div class="form-group"><label for="name">Name:</label><input type="text" id="name" required /></div>
+        <div class="form-group"><label for="email">Email:</label><input type="email" id="email" required /></div>
+        <div class="form-group"><label for="phone">Phone:</label><input type="tel" id="phone" /></div>
+        <div class="form-group"><label for="address">Address:</label><textarea id="address" rows="3"></textarea></div>
+        <div class="form-group"><label for="objective">Objective:</label><textarea id="objective" rows="3"></textarea></div>
+        <div class="form-group">
+          <label for="education">Education:</label>
+          <small style="color: gray;">
+            Enter each row like: <br>
+            <em>Course, University/Board, CGPA/Percentage, Year</em>
+          </small>
+          <textarea id="education" placeholder="e.g.
+          B.Tech, XYZ University, 8.5 CGPA, 2025
+          12th, CBSE, 90%, 2021
+          10th, CBSE, 92%, 2019"></textarea>
+        </div>
+        <div class="form-group"><label for="skills">Skills:</label><textarea id="skills"></textarea></div>
+        <div class="form-group"><label for="projects">Projects:</label><textarea id="projects"></textarea></div>
+        <div class="form-group"><label for="experience">Experience:</label><textarea id="experience"></textarea></div>
+        <div class="form-group"><label for="photo">Profile Photo:</label><input type="file" id="photo" accept="image/*" /></div>
+      </form>
+      <div id="resumeOutput"></div>
+    </div>
+  </main>
+
+  <footer><p>© 2025 Resume Builder App</p></footer>
+  <script src="script.js"></script>
+</body>
+</html>

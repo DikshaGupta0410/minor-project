@@ -1,0 +1,249 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 40px 20px;
+  background-color: #f0f2f5;
+  color: #000000;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.top-header {
+  text-align: center;
+  background-color: #007bff;
+  color: white;
+  padding: 20px 0;
+  margin-bottom: 30px;
+  border-radius: 8px;
+}
+
+.top-header button, .top-header select {
+  margin: 10px 10px 0 10px;
+  padding: 8px 14px;
+  background-color: white;
+  color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.top-header button:hover {
+  background-color: #e0e0e0;
+}
+
+.layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.container {
+  display: flex;
+  gap: 40px;
+  max-width: 1200px;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+form {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+#resumeOutput {
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 210mm;
+  height: 297mm;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: #000;
+  overflow: hidden;
+}
+
+.resume-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.resume-header img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #555;
+}
+
+.resume-name h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #000;
+}
+
+.resume-name p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #333;
+  white-space: pre-line;
+  text-indent: -1.2em;
+  padding-left: 1.4em;
+}
+
+.resume-section {
+  margin-bottom: 14px;
+}
+
+.resume-section h3 {
+  border-bottom: 1px solid #999;
+  padding-bottom: 4px;
+  margin-bottom: 6px;
+  font-size: 16px;
+  color: #007bff;
+}
+
+.resume-section p {
+  font-size: 13px;
+  color: #000;
+}
+
+/* Education Table Style */
+.edu-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.edu-table th,
+.edu-table td {
+  border: 1px solid #ccc;
+  padding: 6px 8px;
+  text-align: left;
+}
+
+.edu-table th {
+  background-color: #f2f2f2;
+  color: #007bff;
+}
+
+/* TEMPLATE STYLES */
+#resumeOutput.classic {
+  border-left: 8px solid #007bff;
+}
+
+#resumeOutput.modern .resume-header {
+  flex-direction: column;
+  align-items: flex-start;
+}
+#resumeOutput.modern .resume-name h2 {
+  font-family: Georgia, serif;
+  font-size: 28px;
+  color: #333;
+}
+#resumeOutput.modern .resume-section h3 {
+  border: none;
+  border-left: 4px solid #007bff;
+  padding-left: 8px;
+}
+
+#resumeOutput.minimal {
+  background-color: white;
+  border: 1px solid #999;
+  box-shadow: none;
+  padding: 20mm;
+  font-family: Arial, sans-serif;
+  color: #111;
+  border-radius: 0;
+}
+#resumeOutput.minimal .resume-header {
+  border-bottom: none;
+  flex-direction: column;
+  align-items: flex-start;
+}
+#resumeOutput.minimal .resume-name h2 {
+  font-size: 22px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+#resumeOutput.minimal .resume-section h3 {
+  color: #000;
+  border-bottom: none;
+  margin-top: 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* DARK MODE */
+body.dark {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.dark input,
+body.dark textarea {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+body.dark form {
+  background-color: #1e1e1e;
+}
+
+body.dark #resumeOutput {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+
+body.dark .resume-name p,
+body.dark .resume-name h2,
+body.dark .resume-section p,
+body.dark .resume-section h3 {
+  color: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #resumeOutput {
+    margin-top: 30px;
+  }
+}
